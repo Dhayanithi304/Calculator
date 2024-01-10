@@ -61,17 +61,17 @@
 }
 @media (max-width:600px){
     h1{
-        background-color: red;
+        background-color:;
     }
     
 }
 @media (min-width : 601px) and (max-width : 1024px){
     h1{
-        background-color: green;
+        background-color: ;
     }
 }
 @media (min-width:1025px){
     h1{
-        background-color: dodgerblue;
+        background-color:;
     }
 }
