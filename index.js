@@ -15,7 +15,9 @@ function appendNumbers(num) {
 function appendOperators(operator) {
   var displayValue = document.getElementById("display").value;
   if(displayValue.includes('=')){
-    displayValue.slice(1);
+    displayValue.slice(0,1);
+    document.getElementById("display").value += operator;
+  }else{
     document.getElementById("display").value += operator;
   }
   
