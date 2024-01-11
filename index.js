@@ -5,6 +5,8 @@ function appendNumbers(num) {
     document.getElementById("display").value = "";
   } else if (displayValue == "Error") {
     document.getElementById("display").value = "";
+  } else if(displayValue.includes('=')){
+    document.getElementById("display").value = "";
   }
   document.getElementById("display").value += num;
 }
