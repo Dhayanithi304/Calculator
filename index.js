@@ -41,12 +41,8 @@ function appendPercentage() {
 //calculate functon
 function calculate() {
   var displayValue = document.getElementById("display").value;
-  try {
     var result = eval(displayValue);
     document.getElementById("display").value ="= "+ result;
-  } catch (error) {
-    document.getElementById("display").value = "Error";
-  }
 }
 
 //clear function
