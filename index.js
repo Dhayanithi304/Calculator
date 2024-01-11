@@ -13,7 +13,10 @@ function appendNumbers(num) {
 
 //display functon2
 function appendOperators(operator) {
-  document.getElementById("display").value += operator;
+  if(!displayValue.includes('=')){
+    document.getElementById("display").value += operator;
+  }
+  
 }
 
 //display decimal
