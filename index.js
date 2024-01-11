@@ -15,7 +15,7 @@ function appendNumbers(num) {
 function appendOperators(operator) {
   var displayValue = document.getElementById("display").value;
   if(displayValue.includes('=')){
-    displayValue.slice(0,1);
+    displayValue.substring(1);
     document.getElementById("display").value += operator;
   }else{
     document.getElementById("display").value += operator;
@@ -53,7 +53,9 @@ function clearLastEntry() {
     document.getElementById("display").value = displayValue.slice(0, -1);
     if (displayValue === "") {
       document.getElementById("display").value = "0";
-    }
+    }if(displayValue.includes('=')){
+    displayValue.substring(1);
+}
   }
 }
 
