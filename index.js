@@ -13,6 +13,7 @@ function appendNumbers(num) {
 
 //display functon2
 function appendOperators(operator) {
+  var displayValue = document.getElementById("display").value;
   if(displayValue.includes('=')){
     displayValue.slice(1);
     document.getElementById("display").value += operator;
