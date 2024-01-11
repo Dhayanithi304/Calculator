@@ -36,6 +36,10 @@ function appendDecimal() {
 //calculate functon
 function calculate() {
   var displayValue = document.getElementById("display").value;
+  if (displayValue.includes('%')) {
+     let percentageValue = parseFloat(displayValue) / 100;
+     document.getElementById('display').value = percentageValue;
+  }
   try {
     var result = eval(displayValue);
     document.getElementById("display").value ="= "+ result;
