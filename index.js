@@ -53,7 +53,7 @@ function clearLastEntry() {
   var displayValue = document.getElementById("display").value;
   if (displayValue !== "0") {
     document.getElementById("display").value = displayValue.slice(0, -1);
-    if (displayValue === "") {
+    if (displayValue.length === 1) {
       document.getElementById("display").value = "0";
     }if(displayValue.includes('=')){
    document.getElementById("display").value = displayValue.substring(1);
