@@ -13,45 +13,79 @@
     crossorigin="anonymous"
   />
   <body>
-
-      <h1 class="h1">Calculator</h1>
-      <div class="calculator p-4 bg-black">
-        <div id="displayDiv">
+    <h1 class="h1">Calculator</h1>
+    <div class="calculator p-4 bg-black">
+      <div id="displayDiv">
         <input type="text" id="display" value="0" readonly disabled />
+      </div>
+      <div class="bodyDiv">
+        <div class="div1">
+          <input type="button" value="AC" onclick="allclear()" id="operator" />
+          <input
+            type="button"
+            value="C"
+            onclick="clearLastEntry()"
+            id="operator"
+          />
+          <input
+            type="button"
+            value="%"
+            onclick="appendPercentage()"
+            id="operator"
+          />
+          <input
+            type="button"
+            value="/"
+            onclick="appendOperators('/')"
+            id="operator"
+          />
         </div>
-        <div class="bodyDiv">
-          <div class="div1">
-            <input type="button" value="AC" onclick="allclear()" id="operator"/>
-            <input type="button"value="C" onclick="clearLastEntry()" id="operator"/>
-            <input type="button"value="%"onclick="appendPercentage()"id="operator"/>
-            <input type="button"value="/"onclick="appendOperators('/')"id="operator"/>
-          </div>
-          <div class="div1">
-            <input type="button" value="7" onclick="appendNumbers('7')" />
-            <input type="button" value="8" onclick="appendNumbers('8')" />
-            <input type="button" value="9" onclick="appendNumbers('9')" />
-            <input type="button"value="*"onclick="appendOperators('*')"id="operator"/>
-          </div>
-          <div class="div1">
-            <input type="button" value="4" onclick="appendNumbers('4')" />
-            <input type="button" value="5" onclick="appendNumbers('5')" />
-            <input type="button" value="6" onclick="appendNumbers('6')" />
-            <input type="button"value="-"onclick="appendOperators('-')"id="operator"/>
-          </div>
-          <div class="div1">
-            <input type="button" value="1" onclick="appendNumbers('1')" />
-            <input type="button" value="2" onclick="appendNumbers('2')" />
-            <input type="button" value="3" onclick="appendNumbers('3')" />
-            <input type="button"value="+"onclick="appendOperators('+')"id="operator"/>
-          </div>
-          <div class="div1">
-            <input type="button"value="F"onclick="fullScreen()"id="operator"/>
-            <input type="button" value="0" onclick="appendNumbers('0')" />
-            <input type="button"value="."onclick="appendDecimal()"id="operator"/>
-            <input type="button" value="=" onclick="calculate()" id="equal" />
-          </div>
+        <div class="div1">
+          <input type="button" value="7" onclick="appendNumbers('7')" />
+          <input type="button" value="8" onclick="appendNumbers('8')" />
+          <input type="button" value="9" onclick="appendNumbers('9')" />
+          <input
+            type="button"
+            value="*"
+            onclick="appendOperators('*')"
+            id="operator"
+          />
+        </div>
+        <div class="div1">
+          <input type="button" value="4" onclick="appendNumbers('4')" />
+          <input type="button" value="5" onclick="appendNumbers('5')" />
+          <input type="button" value="6" onclick="appendNumbers('6')" />
+          <input
+            type="button"
+            value="-"
+            onclick="appendOperators('-')"
+            id="operator"
+          />
+        </div>
+        <div class="div1">
+          <input type="button" value="1" onclick="appendNumbers('1')" />
+          <input type="button" value="2" onclick="appendNumbers('2')" />
+          <input type="button" value="3" onclick="appendNumbers('3')" />
+          <input
+            type="button"
+            value="+"
+            onclick="appendOperators('+')"
+            id="operator"
+          />
+        </div>
+        <div class="div1">
+          <input type="button" value="F" onclick="fullScreen()" id="operator" />
+          <input type="button" value="0" onclick="appendNumbers('0')" />
+          <input
+            type="button"
+            value="."
+            onclick="appendDecimal()"
+            id="operator"
+          />
+          <input type="button" value="=" onclick="calculate()" id="equal" />
         </div>
       </div>
+    </div>
 
     <script src="index.js"></script>
     <script
