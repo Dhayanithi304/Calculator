@@ -17,6 +17,8 @@ function appendOperators(operator) {
   if(displayValue.includes('=')){
     document.getElementById("display").value = displayValue.substring(1);
     document.getElementById("display").value += operator;
+  }else if (/[\/*+\-%]$/.test(displayValue)){
+    document.getElementById("display").value = diplayValue.slice(0, -1) + operator ;
   }else{
     document.getElementById("display").value += operator;
   }
