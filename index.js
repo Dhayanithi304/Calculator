@@ -32,14 +32,15 @@ function appendDecimal() {
     document.getElementById("display").value += ".";
   }
 }
+function appendPercentage() {
+    let displayValue = document.getElementById('display').value;
+    let percentageValue = parseFloat(displayValue) / 100;
+    document.getElementById('display').value = percentageValue;
+}
 
 //calculate functon
 function calculate() {
   var displayValue = document.getElementById("display").value;
-  if (displayValue.includes('%')) {
-     let percentageValue = parseFloat(displayValue) / 100;
-     document.getElementById('display').value = percentageValue;
-  }
   try {
     var result = eval(displayValue);
     document.getElementById("display").value ="= "+ result;
