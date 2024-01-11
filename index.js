@@ -47,7 +47,7 @@ function calculate() {
 var result = eval(displayValue);
     document.getElementById("display").value ="= "+ result;
 
-  }else if{
+  }else{
     var result = eval(displayValue);
     document.getElementById("display").value ="= "+ result;
   }
