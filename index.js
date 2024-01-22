@@ -1,6 +1,6 @@
 //display functon
 function appendNumbers(num) {
-  var displayValue = document.getElementById("display").value;
+  const displayValue = document.getElementById("display").value;
   if (displayValue == "0") {
     document.getElementById("display").value = "";
   } else if (displayValue == "Error") {
@@ -14,7 +14,7 @@ function appendNumbers(num) {
 
 //display functon2
 function appendOperators(operator) {
-  var displayValue = document.getElementById("display").value;
+  const displayValue = document.getElementById("display").value;
   if (displayValue.includes("=")) {
     document.getElementById("display").value = displayValue.substring(1);
     document.getElementById("display").value += operator;
@@ -28,7 +28,7 @@ function appendOperators(operator) {
 }
 
 function fontChange() {
-  var displayValue = document.getElementById("display").value;
+  const displayValue = document.getElementById("display").value;
   for (let i = 0; i < displayValue.length; i++) {
     if (displayValue.length >= 16) {
       document.getElementById("display").style.fontSize = "35px";
@@ -48,7 +48,7 @@ function fontChange() {
 
 //display decimal
 function appendDecimal() {
-  var displayValue = document.getElementById("display").value;
+  const displayValue = document.getElementById("display").value;
   if (displayValue !== ".") {
     document.getElementById("display").value += ".";
   }
@@ -63,15 +63,15 @@ function appendPercentage() {
 
 //calculate functon
 function calculate() {
-  var displayValue = document.getElementById("display").value;
-  var index = displayValue.length - 1;
+  const displayValue = document.getElementById("display").value;
+  const index = displayValue.length - 1;
   console.log(index);
   if (/[\/*+\-%]$/.test(displayValue[index])) {
     document.getElementById("display").value = displayValue.slice(0, -1);
-    var result = eval(document.getElementById("display").value);
+    const result = eval(document.getElementById("display").value);
     document.getElementById("display").value = "= " + result;
   } else {
-    var result = eval(displayValue);
+    const result = eval(displayValue);
     document.getElementById("display").value = "= " + result;
   }
   fontChange();
@@ -84,7 +84,7 @@ function allclear() {
 }
 
 function clearLastEntry() {
-  var displayValue = document.getElementById("display").value;
+  const displayValue = document.getElementById("display").value;
   if (displayValue !== "0") {
     document.getElementById("display").value = displayValue.slice(0, -1);
     if (displayValue.length === 1) {
@@ -98,12 +98,29 @@ function clearLastEntry() {
 }
 
 function fullScreen() {
-  elem = document.documentElement;
+  const elem = document.documentElement;
+  const fscreen = document.getElementById("fscreen");
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
+    fscreen.value = "<";
   } else if (elem.webkitRequestFullscreen) {
     elem.webkitRequestFullscreen();
+    fscreen.value = "<";
   } else if (elem.msRequestFullscreen) {
     elem.msRequestFullscreen();
+    fscreen.value = "<";
+  }
+
+  if ((fscreen.value = "<")) {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+      fscreen.value = "F";
+    } else if (document.webkitExitFullscreen) { /* Safari */
+      document.webkitExitFullscreen();
+      fscreen.value = "F";
+    } else if (document.msExitFullscreen) { /* IE11 */
+      document.msExitFullscreen();
+      fscreen.value = "F";
+    }
   }
 }
